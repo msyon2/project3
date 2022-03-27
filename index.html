@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<!-- //favicon -->
+
+	<title>Airbnb</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/mobile_s.css" media="screen and (max-width:478px)">
+	<link rel="stylesheet" href="css/mobile.css" media="screen and (min-width:479px) and (max-width:768px)">
+	<link rel="stylesheet" href="css/tablet.css" media="screen and (min-width:769px) and (max-width:1023px)">
+	<link rel="stylesheet" href="css/laptop.css" media="screen and (min-width:1024px) and (max-width:1300px)">
+</head>
+
+<body>
+	<!-- skip -->
+	<div id="skip">
+		<a href="#header" rel="bookmark">go to main navigation</a>
+		<a href="#main_vis" rel="bookmark">our trip suggestions</a>
+		<a href="#trip_dest" rel="bookmark">trip locations near you</a>
+		<a href="#activity" rel="bookmark">discover experiences</a>
+		<a href="#giftcard" rel="bookmark">find out about Airbnb gift cards</a>
+		<a href="#hosting" rel="bookmark">find out about hosting</a>
+		<a href="#future_dest" rel="bookmark">inspirations for future getaways </a>
+		<a href="#footer" rel="bookmark">about us and our sitemap</a>
+	</div>
+	<!-- //#skip -->
+	<!-- header -->
+	<header>
+		<!-- #header -->
+		<div id="header">
+			<!-- w1280 -->
+			<div class="w1280">
+				<!-- top -->
+				<div class="top flex">
+					<div class="logo">
+						<h1 class="logo_horiz pa">Airbnb logo</h1>
+						<a href="index.html"></a>
+						<img src="./assets/logo.svg" alt="Airbnb Logo" />
+					</div>
+					<div class="nav flex">
+						<ul class="flex">
+							<li class="pr"><a class="depth1 active" href="#tab_place">Places to stay</a></li>
+							<li class="pr"><a class="depth1" href="#tab_experience">Experiences</a></li>
+							<li class="pr"><a href="#">Online Experiences</a></li>
+						</ul>
+
+						<div class="search_box pr">
+							<div id="tab_place" class="search tab_place flex pa">
+								<div class="query pr">
+									<div class="place cell1">Location</div>
+									<input type="search" name="query" id="query_loc" placeholder="Where are you going?">
+								</div>
+								<div class="query pr">
+									<div class="place cell2">Check in</div>
+									<input type="search" name="query" id="query_date_in" placeholder="Add dates">
+								</div>
+								<div class="query pr">
+									<div class="place cell3">Check out</div>
+									<input type="search" name="query" id="query_date_out" placeholder="Add dates">
+								</div>
+								<div class="query pr">
+									<div class="place cell4">Guests</div>
+									<input type="search" name="query" id="query_guest" placeholder="Add guests">
+								</div>
+							</div>
+							<!-- #tab_place -->
+							<div id="tab_place_content">
+								<div id="tab_place1"></div>
+								<div id="tab_place2"></div>
+								<div id="tab_place3"></div>
+								<div id="tab_place4"></div>
+							</div>
+							<!-- //#tab_place_content -->
+							<div id="tab_experience" class="search pa flex">
+								<div class="query pr">
+									<div class="place cell1">Location</div>
+									<input type="search" name="query" id="query_place" placeholder="Where are you going?">
+								</div>
+								<div class="query pr">
+									<div class="place cell4">Date</div>
+									<input type="search" name="query" id="query_dates" placeholder="And when you want to go">
+								</div>
+							</div>
+							<!-- //#tab_experience -->
+							<div id="tab_experience_content" >
+								<div id="tab_experience1"></div>
+								<div id="tab_experience2"></div>
+								<div id="tab_experience3"></div>
+								<div id="tab_experience4"></div>
+							</div>
+							<!-- //#tab_experience_content-->
+							<button type="button" class="pa">
+								<object class="pa" data="./assets/search_thin.svg" type="image/svg+xml"></object>
+								검색 버튼
+							</button>
+						</div>
+						<!-- //.search_box -->
+					</div>
+					<!-- //.nav -->
+					<!-- .member login-->
+					<div class="member flex pr">
+						<div class="flex">
+							<div class="host"><a href="#">Become a Host</a></div>
+							<div class="lang pr">
+								<img class="pa" src="./assets/globe.svg" alt="언어와 통화 선택" />
+							</div>
+						</div>
+						<button class="login flex" type="button">
+							<object data="./assets/ham_menu.svg" type="image/svg+xml"></object>
+							<object data="./assets/member.svg" type="image/svg+xml"></object>
+							메인 메뉴
+						</button>
+						<div class="join pa">
+							<ul>
+								<li><a href="#">Sign up</a></li>
+								<li><a href="#">Log in</a></li>
+								<li><a href="#">Host your home</a></li>
+								<li><a href="#">Host an experience</a></li>
+								<li><a href="#">Help</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //.member login-->
+				</div>
+				<!-- //.top -->
+			</div>
+			<!-- //.w1280 -->
+		</div>
+		<!-- //#header -->
+		<!-- header_scroll -->
+		<div id="header_scroll">
+			<div class="w1280">
+				<!-- top -->
+				<div class="top flex">
+					<div class="logo">
+						<a href="index.html"></a>
+						<object data="./assets/logo.svg" type="image/svg+xml"></object>
+					</div>
+					<div class="nav pr flex">
+						<div class="search_box">
+							<button type="button" class="pa">
+								<object class="pa" data="./assets/search_med.svg" type="image/svg+xml"></object>
+								검색 버튼
+							</button>
+							<div class="search">
+								<div class="query pr">
+									<div class="place cell1">Start your search</div>
+								</div>
+							</div>
+						</div>
+						<!-- //.search_box -->
+					</div>
+					<!-- //.nav -->
+					<!-- member login-->
+					<div class="member flex">
+						<div class="flex">
+							<div class="host"><a href="#">Become a Host</a></div>
+							<div class="lang pr">
+								<object class="pa" data="./assets/globe.svg" type="image/svg+xml">언어와 통화 선택</object>
+							</div>
+						</div>
+						<button class="login flex" type="button">
+							<object data="./assets/ham_menu.svg" type="image/svg+xml"></object>
+							<object data="./assets/member.svg" type="image/svg+xml"></object>
+							메인 메뉴
+						</button>
+					</div>
+					<!-- //.member login-->
+				</div>
+				<!-- //.top -->
+			</div>
+		</div>
+		<!-- //#header_scroll -->
+	</header>
+	<!-- //header -->
+	<main>
+		<!-- main -->
+		<section id="main_vis">
+			<!-- w1280--> 
+			<div class="w1280">
+				<div class="visual flex">
+					<h2 class="tit_w">Let your curiosity do the booking</h2>
+					<div class="flexible">
+						<a href="">
+							<span>I'm flexible</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- .w1280 -->
+		</section>
+		<!-- //#main -->
+		<!-- trip_dest section -->
+		<section id="trip_dest">
+			<!-- w1280 -->
+			<div class="w1280">
+				<h2 class="tit_b">Inspiration for your next trip</h2>
+				<!-- dest_card -->
+				<div class="dest_card flex">
+					<div class="card loc1" tabindex="0">
+						<div class="img"></div>
+						<div class="info flex">
+							<span class="loc_name">Seoul</span>
+							<span class="loc_dist">2 kilometers away</span>
+						</div>
+					</div>
+					<div class="card loc2" tabindex="0">
+						<div class="img"></div>
+						<div class="info flex">
+							<span class="loc_name">Incheon</span>
+							<span class="loc_dist">29 kilometers away</span>
+						</div>
+
+					</div>
+					<div class="card loc3" tabindex="0">
+						<div class="img"></div>
+						<div class="info flex">
+							<span class="loc_name">Daegu</span>
+							<span class="loc_dist">237 kilometers away</span>
+						</div>
+					</div>
+					<div class="card loc4" tabindex="0">
+						<div class="img"></div>
+						<div class="info flex">
+							<span class="loc_name">Daejeon</span>
+							<span class="loc_dist">140 kilometers away</span>
+						</div>
+					</div>
+				</div>
+				<!-- //.dest_card -->
+			</div>
+			<!-- //.w1280 -->
+		</section>
+		<!-- //#trip_dest section -->
+		<section id="activity">
+			<div class="w1280">
+				<h2 class="tit_b">Discover Airbnb Experiences</h2>
+				<div class="activity_card flex">
+					<div class="card outdoor flex">
+						<h3 class="tit">Things to do<br />
+							on your trip</h3>
+						<button class="active">Experiences</button>
+					</div>
+					<div class="card indoor flex">
+						<h3 class="tit">Things to do<br />
+							from home</h3>
+						<button class="active">Online Experiences</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="giftcard" class="pr">
+			<div class="w1280 flex">
+				<div>
+					<h2 class="tit_b">Shop Airbnb<br />gift cards</h2>
+					<button>Learn more</button>
+				</div>
+				<div class="giftcard_image"></div>
+			</div>
+			<div class="giftcard_image w100"></div>
+		</section>
+		<section id="hosting">
+			<div class="w1280 flex">
+				<h2 class="tit_w">Questions <br /> about <br />hosting?</h2>
+				<button>Ask a Superhost</button>
+			</div>
+		</section>
+		<section id="future_dest">
+			<div class="w1280">
+				<h2 class="tit_b">Inspiration for future getaways</h2>
+				<div class="future_dest_list flex">
+					<a href="#panel1" class="pr active">Destinations for arts & culture</a>
+					<a href="#panel2" class="pr">Destinations for outdoor adventure</a>
+					<a href="#panel3" class="pr">Mountain cabins</a>
+					<a href="#panel4" class="pr">Beach destinations</a>
+					<a href="#panel5" class="pr">Popular destinations</a>
+					<a href="#panel6" class="pr">Unique Stays</a>
+				</div>
+				<div class="future_dest_panel pr">
+					<div id="panel1" class="active">
+						<ul class="flex">
+							<li>
+								<a href="#">
+									<span>Phoenix</span>
+									<span class="region">Arizona</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Hot Springs</span>
+									<span class="region">Arkansas</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Los Angeles</span>
+									<span class="region">California</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>San Diego</span>
+									<span class="region">California</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Barcelona</span>
+									<span class="region">Catalonia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Prague</span>
+									<span class="region">Czechia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Washington</span>
+									<span class="region">Distric of Columbia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Keswick</span>
+									<span class="region">England</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>London</span>
+									<span class="region">England</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Scarborough</span>
+									<span class="region">England</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="show_more">Show more</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div id="panel2">
+						<ul class="flex">
+							<li>
+								<a href="#">
+									<span>Lake Martin</span>
+									<span class="region">Alabama</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Banff</span>
+									<span class="region">Alberta</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Nerja</span>
+									<span class="region">Andalucia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Greer</span>
+									<span class="region">Arizona</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Lake Havasu City</span>
+									<span class="region">Arizona</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Lake Powell</span>
+									<span class="region">Arizona</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>North Rim</span>
+									<span class="region">Arizona</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Payson</span>
+									<span class="region">Arizona</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Pinetop-Lakeside</span>
+									<span class="region">Arizona</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Red Rock</span>
+									<span class="region">Arizona</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Dinner Plain</span>
+									<span class="region">Austrailia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="show_more">Show more</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div id="panel3">
+						<ul class="flex">
+							<li>
+								<a href="#">
+									<span>Mentone</span>
+									<span class="region">Alabama</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Sedona</span>
+									<span class="region">Arizona</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Helen</span>
+									<span class="region">Georgia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Pine Mountain</span>
+									<span class="region">Georgia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Stone Mountain</span>
+									<span class="region">Georgia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Island Park</span>
+									<span class="region">Idaho</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Blue Mountains</span>
+									<span class="region">New South Wales</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Asheville</span>
+									<span class="region">North Carolina</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Blowing Rock</span>
+									<span class="region">North Carolina</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Boone</span>
+									<span class="region">North Carolina</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Hochatown</span>
+									<span class="region">Oklahoma</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="show_more">Show more</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div id="panel4">
+						<ul class="flex">
+							<li>
+								<a href="#">
+									<span>Dauphin Island</span>
+									<span class="region">Alabama</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Fort Morgan</span>
+									<span class="region">Alabama</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Gulf Shores</span>
+									<span class="region">Alabama</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Bruny Island</span>
+									<span class="region">Austrailia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Cresent Head</span>
+									<span class="region">Austrailia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Gerringong</span>
+									<span class="region">Austrailia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Hamilton Island</span>
+									<span class="region">Austrailia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Lancelin</span>
+									<span class="region">Austrailia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Melbourne Beach</span>
+									<span class="region">Austrailia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Moonta Bay</span>
+									<span class="region">Austrailia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Ocean Grove</span>
+									<span class="region">Austrailia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="show_more">Show more</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div id="panel5">
+						<ul class="flex">
+							<li>
+								<a href="#">
+									<span>Canmore</span>
+									<span class="region">Alberta</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Benalmadena</span>
+									<span class="region">Andausia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Marbella</span>
+									<span class="region">Andausia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Mijas</span>
+									<span class="region">Andausia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Prescott</span>
+									<span class="region">Arizona</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Scottsdale</span>
+									<span class="region">Arizona</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Tucson</span>
+									<span class="region">Arizona</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Jasper</span>
+									<span class="region">Arkansas</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Mountain View</span>
+									<span class="region">Arkansas</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Devonport</span>
+									<span class="region">Austrailia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Mallacoota</span>
+									<span class="region">Austrailia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="show_more">Show more</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div id="panel6">
+						<ul class="flex">
+							<li>
+								<a href="#">
+									<span>Cabins</span>
+									<span class="region">United States</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Treehouses</span>
+									<span class="region">United States</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Glamping</span>
+									<span class="region">United States</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Tiny Houses</span>
+									<span class="region">United States</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Beach Houses</span>
+									<span class="region">United States</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Campers and RVs</span>
+									<span class="region">United States</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Lakehouses</span>
+									<span class="region">United States</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<!-- //main -->
+	<!-- footer -->
+	<footer id="footer">
+		<!-- info list -->
+		<div id="info_list" class="w1280 flex">
+			<div class="support">
+				<span class="category_tit">Support</span>
+				<ul class="category_list">
+					<li><a href="#">Help Center</a></li>
+					<li><a href="#">Saftey Information</a></li>
+					<li><a href="#">Cancellation options</a></li>
+					<li><a href="#">Our COVID-19 Response</a></li>
+					<li><a href="#">Supporting people with disabilities</a></li>
+					<li><a href="#">Report a neighborhood concern</a></li>
+				</ul>
+			</div>
+			<div class="community">
+				<span class="category_tit">Community</span>
+				<ul class="category_list">
+					<li><a href="#">Airbnb.org:disaster relief housing</a></li>
+					<li><a href="#">Support Afghan refugees</a></li>
+					<li><a href="#">Combating discrimination</a></li>
+				</ul>
+			</div>
+			<div class="hosting">
+				<span class="category_tit">Hosting</span>
+				<ul class="category_list">
+					<li><a href="#">Try hosting</a></li>
+					<li><a href="#">AirCover:protection for Hosts</a></li>
+					<li><a href="#">Explore hosting resources</a></li>
+					<li><a href="#">Visit our community forum</a></li>
+					<li><a href="#">How to host responsibly</a></li>
+				</ul>
+			</div>
+			<div class="about">
+				<span class="category_tit">About</span>
+				<ul class="category_list">
+					<li><a href="#">Newsroom</a></li>
+					<li><a href="#">Learn about new features</a></li>
+					<li><a href="#">Letter from our founders</a></li>
+					<li><a href="#">Careers</a></li>
+					<li><a href="#">Investors</a></li>
+					<li><a href="#">Airbnb Luxe</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- //#info list -->
+		<!-- copyright -->
+		<div id="copyright">
+			<div class="w1280 flex">
+				<div class="foot_left flex">
+					<div>© 2022 Airbnb, Inc.</div>
+					<span>·</span>
+					<a href="#">Privacy</a>
+					<span>·</span>
+					<a href="#">Terms</a>
+					<span>·</span>
+					<a href="#">Sitemap</a>
+				</div>
+				<div class="foot_right flex">
+					<button class="lang">
+						<object data="assets/globe_footer.svg" type="image/svg+xml"></object>
+						<span>English (US)</span>
+					</button>
+					<button class="currency">
+						<span class="cur_sign">₩</span>
+						<span>KRW</span>
+					</button>
+					<div class="sns_icons">
+						<ul class="flex">
+							<li class="sns">
+								<a href="#">
+									<object data="./assets/sns_fb.svg" type="image/svg+xml"></object>
+								</a>
+							</li>
+							<li class="sns">
+								<a href="#">
+									<object data="./assets/sns_twt.svg" type="image/svg+xml"></object>
+								</a>
+							</li>
+							<li class="sns">
+								<a href="#">
+									<object data="./assets/sns_insta.svg" type="image/svg+xml"></object>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //#copyright -->
+	</footer>
+	<!-- //#footer -->
+	<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+	<script src="js/detectmobilebrowser.js"></script>
+	<script src="js/jq.js"></script>
+</body>
+
+</html>

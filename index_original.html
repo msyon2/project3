@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<!-- //favicon -->
+
+	<title>Airbnb</title>
+	<link rel="stylesheet" href="css_orginal/reset.css">
+	<link rel="stylesheet" href="css_orginal/style_origin.css">
+	<link rel="stylesheet" href="css_orginal/main_origin.css">
+	<link rel="stylesheet" href="css_orginal/mobile_s_origin.css" media="screen and (max-width:478px)">
+	<link rel="stylesheet" href="css_orginal/mobile_origin.css" media="screen and (min-width:479px) and (max-width:768px)">
+	<link rel="stylesheet" href="css_orginal/tablet_origin.css" media="screen and (min-width:769px) and (max-width:1023px)">
+	<link rel="stylesheet" href="css_orginal/laptop_origin.css" media="screen and (min-width:1024px) and (max-width:1300px)">
+</head>
+
+<body>
+	<!-- skip -->
+	<div id="skip">
+		<a href="#header" rel="bookmark">go to main navigation</a>
+		<a href="#main_vis" rel="bookmark">our trip suggestions</a>
+		<a href="#trip_dest" rel="bookmark">trip locations near you</a>
+		<a href="#activity" rel="bookmark">discover experiences</a>
+		<a href="#giftcard" rel="bookmark">find out about Airbnb gift cards</a>
+		<a href="#hosting" rel="bookmark">find out about hosting</a>
+		<a href="#future_dest" rel="bookmark">inspirations for future getaways </a>
+		<a href="#footer" rel="bookmark">about us and our sitemap</a>
+	</div>
+	<!-- //#skip -->
+	<!-- header -->
+	<header>
+		<!-- #header -->
+		<div id="header">
+			<!-- w1280 -->
+			<div class="w1280">
+				<!-- top -->
+				<div class="top flex">
+					<div class="logo">
+						<h1 class="logo_horiz pa">Airbnb logo</h1>
+						<a href="index.html"></a>
+						<object data="./assets/logo.svg" type="image/svg+xml"></object>
+					</div>
+					<div class="nav pr flex">
+						<input class="pa" id="place" name="menu" type="radio" checked>
+						<label class="pr current" for="place">Places to stay</label>
+
+						<input class="pa" id="experience" name="menu" type="radio">
+						<label class="pr" for="experience">Experiences</label>
+
+						<label class="pr"><a href="#">Online Experiences</a></label>
+
+						<div class="search_box pa active">
+							<div id="tab_place" class="search tab_place flex">
+								<div class="query pr">
+									<div class="place cell1">Location</div>
+									<input type="search" name="query" id="query_loc" placeholder="Where are you going?">
+								</div>
+								<div class="query pr">
+									<div class="place cell2">Check in</div>
+									<input type="search" name="query" id="query_date_in" placeholder="Add dates">
+								</div>
+								<div class="query pr">
+									<div class="place cell3">Check out</div>
+									<input type="search" name="query" id="query_date_out" placeholder="Add dates">
+								</div>
+								<div class="query pr">
+									<div class="place cell4">Guests</div>
+									<input type="search" name="query" id="query_guest" placeholder="Add guests">
+								</div>
+							</div>
+							<!-- #tab_place -->
+							<div id="tab_place_content">
+								<div id="tab_place1"></div>
+								<div id="tab_place2"></div>
+								<div id="tab_place3"></div>
+								<div id="tab_place4"></div>
+							</div>
+							<!-- //#tab_place_content -->
+							<div id="tab_experience" class="search pr flex">
+								<div class="query pr">
+									<div class="place cell1">Location</div>
+									<input type="search" name="query" id="query_place" placeholder="Where are you going?">
+								</div>
+								<div class="query pr">
+									<div class="place cell4">Date</div>
+									<input type="search" name="query" id="query_dates" placeholder="And when you want to go">
+								</div>
+							</div>
+							<!-- //#tab_experience -->
+							<div id="tab_experience_content">
+								<div id="tab_experience1"></div>
+								<div id="tab_experience2"></div>
+								<div id="tab_experience3"></div>
+								<div id="tab_experience4"></div>
+							</div>
+							<!-- //#tab_experience_content-->
+							<button type="button" class="pa">
+								<object class="pa" data="./assets/search_thin.svg" type="image/svg+xml"></object>
+								검색 버튼
+							</button>
+						</div>
+						<!-- //.search_box -->
+					</div>
+					<!-- //.nav -->
+					<!-- .member login-->
+					<div class="member flex">
+						<div class="flex">
+							<div class="host"><a href="#">Become a Host</a></div>
+							<div class="lang pr">
+								<object class="pa" data="./assets/globe.svg" type="image/svg+xml">언어와 통화 선택</object>
+							</div>
+						</div>
+						<button class="login flex" type="button">
+							<object data="./assets/ham_menu.svg" type="image/svg+xml"></object>
+							<object data="./assets/member.svg" type="image/svg+xml"></object>
+							메인 메뉴
+						</button>
+					</div>
+					<!-- //.member login-->
+				</div>
+				<!-- //.top -->
+			</div>
+			<!-- //.w1280 -->
+		</div>
+		<!-- //#header -->
+		<!-- header_scroll -->
+		<div id="header_scroll">
+			<div class="w1280">
+				<!-- top -->
+				<div class="top flex">
+					<div class="logo">
+						<a href="index.html"></a>
+						<object data="./assets/logo.svg" type="image/svg+xml"></object>
+					</div>
+					<div class="nav pr flex">
+						<div class="search_box">
+							<button type="button" class="pa">
+								<object class="pa" data="./assets/search_med.svg" type="image/svg+xml"></object>
+								검색 버튼
+							</button>
+							<div class="search">
+								<div class="query pr">
+									<div class="place cell1">Start your search</div>
+								</div>
+							</div>
+						</div>
+						<!-- //.search_box -->
+					</div>
+					<!-- //.nav -->
+					<!-- member login-->
+					<div class="member flex">
+						<div class="flex">
+							<div class="host"><a href="#">Become a Host</a></div>
+							<div class="lang pr">
+								<object class="pa" data="./assets/globe.svg" type="image/svg+xml">언어와 통화 선택</object>
+							</div>
+						</div>
+						<button class="login flex" type="button">
+							<object data="./assets/ham_menu.svg" type="image/svg+xml"></object>
+							<object data="./assets/member.svg" type="image/svg+xml"></object>
+							메인 메뉴
+						</button>
+					</div>
+					<!-- //.member login-->
+				</div>
+				<!-- //.top -->
+			</div>
+		</div>
+		<!-- //#header_scroll -->
+	</header>
+	<!-- //header -->
+	<main>
+		<!-- main -->
+		<section id="main_vis">
+			<!-- w1280--> 
+			<div class="w1280">
+				<div class="visual flex">
+					<h2 class="tit_w">Let your curiosity do the booking</h2>
+					<div class="flexible">
+						<a href="">
+							<span>I'm flexible</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- .w1280 -->
+		</section>
+		<!-- //#main -->
+		<!-- trip_dest section -->
+		<section id="trip_dest">
+			<!-- w1280 -->
+			<div class="w1280">
+				<h2 class="tit_b">Inspiration for your next trip</h2>
+				<!-- dest_card -->
+				<div class="dest_card flex">
+					<div class="card loc1" tabindex="0">
+						<div class="img"></div>
+						<div class="info flex">
+							<span class="loc_name">Seoul</span>
+							<span class="loc_dist">2 kilometers away</span>
+						</div>
+					</div>
+					<div class="card loc2" tabindex="0">
+						<div class="img"></div>
+						<div class="info flex">
+							<span class="loc_name">Incheon</span>
+							<span class="loc_dist">29 kilometers away</span>
+						</div>
+
+					</div>
+					<div class="card loc3" tabindex="0">
+						<div class="img"></div>
+						<div class="info flex">
+							<span class="loc_name">Daegu</span>
+							<span class="loc_dist">237 kilometers away</span>
+						</div>
+					</div>
+					<div class="card loc4" tabindex="0">
+						<div class="img"></div>
+						<div class="info flex">
+							<span class="loc_name">Daejeon</span>
+							<span class="loc_dist">140 kilometers away</span>
+						</div>
+					</div>
+				</div>
+				<!-- //.dest_card -->
+			</div>
+			<!-- //.w1280 -->
+		</section>
+		<!-- //#trip_dest section -->
+		<section id="activity">
+			<div class="w1280">
+				<h2 class="tit_b">Discover Airbnb Experiences</h2>
+				<div class="activity_card flex">
+					<div class="card outdoor flex">
+						<h3 class="tit">Things to do<br />
+							on your trip</h3>
+						<button class="active">Experiences</button>
+					</div>
+					<div class="card indoor flex">
+						<h3 class="tit">Things to do<br />
+							from home</h3>
+						<button class="active">Online Experiences</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="giftcard">
+			<div class="w1280 flex">
+				<div>
+					<h2 class="tit_b">Shop Airbnb<br />gift cards</h2>
+					<button>Learn more</button>
+				</div>
+				<div class="giftcard_image"></div>
+			</div>
+		</section>
+		<section id="hosting">
+			<div class="w1280 flex">
+				<h2 class="tit_w">Questions <br /> about <br />hosting?</h2>
+				<button>Ask a Superhost</button>
+			</div>
+		</section>
+		<section id="future_dest">
+			<div class="w1280">
+				<h2 class="tit_b">Inspiration for future getaways</h2>
+				<div class="future_dest_list flex">
+					<button type="button" class="pr active">Destinations for arts & culture</button>
+					<button type="button" class="pr">Destinations for outdoor adventure</button>
+					<button type="button" class="pr">Mountain cabins</button>
+					<button type="button" class="pr">Beach destinations</button>
+					<button type="button" class="pr">Popular destinations</button>
+					<button type="button" class="pr">Unique Stays</button>
+				</div>
+				<div class="future_dest_panel">
+					<div class="panel1">
+						<ul class="flex">
+							<li>
+								<a href="#">
+									<span>Phoenix</span>
+									<span class="region">Arizona</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Hot Springs</span>
+									<span class="region">Arkansas</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Los Angeles</span>
+									<span class="region">California</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>San Diego</span>
+									<span class="region">California</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Barcelona</span>
+									<span class="region">Catalonia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Prague</span>
+									<span class="region">Czechia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Washington</span>
+									<span class="region">Distric of Columbia</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Keswick</span>
+									<span class="region">England</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>London</span>
+									<span class="region">England</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span>Scarborough</span>
+									<span class="region">England</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="show_more">Show more</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="panel2"></div>
+					<div class="panel3"></div>
+					<div class="panel4"></div>
+					<div class="panel5"></div>
+					<div class="panel6"></div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<!-- //main -->
+	<!-- footer -->
+	<footer id="footer">
+		<!-- info list -->
+		<div id="info_list" class="w1280 flex">
+			<div class="support">
+				<span class="category_tit">Support</span>
+				<ul class="category_list">
+					<li><a href="#">Help Center</a></li>
+					<li><a href="#">Saftey Information</a></li>
+					<li><a href="#">Cancellation options</a></li>
+					<li><a href="#">Our COVID-19 Response</a></li>
+					<li><a href="#">Supporting people with disabilities</a></li>
+					<li><a href="#">Report a neighborhood concern</a></li>
+				</ul>
+			</div>
+			<div class="community">
+				<span class="category_tit">Community</span>
+				<ul class="category_list">
+					<li><a href="#">Airbnb.org:disaster relief housing</a></li>
+					<li><a href="#">Support Afghan refugees</a></li>
+					<li><a href="#">Combating discrimination</a></li>
+				</ul>
+			</div>
+			<div class="hosting">
+				<span class="category_tit">Hosting</span>
+				<ul class="category_list">
+					<li><a href="#">Try hosting</a></li>
+					<li><a href="#">AirCover:protection for Hosts</a></li>
+					<li><a href="#">Explore hosting resources</a></li>
+					<li><a href="#">Visit our community forum</a></li>
+					<li><a href="#">How to host responsibly</a></li>
+				</ul>
+			</div>
+			<div class="about">
+				<span class="category_tit">About</span>
+				<ul class="category_list">
+					<li><a href="#">Newsroom</a></li>
+					<li><a href="#">Learn about new features</a></li>
+					<li><a href="#">Letter from our founders</a></li>
+					<li><a href="#">Careers</a></li>
+					<li><a href="#">Investors</a></li>
+					<li><a href="#">Airbnb Luxe</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- //#info list -->
+		<!-- copyright -->
+		<div id="copyright">
+			<div class="w1280 flex">
+				<div class="foot_left flex">
+					<div>© 2022 Airbnb, Inc.</div>
+					<span>·</span>
+					<a href="#">Privacy</a>
+					<span>·</span>
+					<a href="#">Terms</a>
+					<span>·</span>
+					<a href="#">Sitemap</a>
+				</div>
+				<div class="foot_right flex">
+					<button class="lang">
+						<object data="assets/globe.svg" type="image/svg+xml"></object>
+						<span>English (US)</span>
+					</button>
+					<button class="currency">
+						<span class="cur_sign">₩</span>
+						<span>KRW</span>
+					</button>
+					<div class="sns_icons">
+						<ul class="flex">
+							<li class="sns">
+								<a href="#">
+									<object data="./assets/sns_fb.svg" type="image/svg+xml"></object>
+								</a>
+							</li>
+							<li class="sns">
+								<a href="#">
+									<object data="./assets/sns_twt.svg" type="image/svg+xml"></object>
+								</a>
+							</li>
+							<li class="sns">
+								<a href="#">
+									<object data="./assets/sns_insta.svg" type="image/svg+xml"></object>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //#copyright -->
+	</footer>
+	<!-- //#footer -->
+</body>
+
+</html>
