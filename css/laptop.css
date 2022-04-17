@@ -32,6 +32,15 @@ footer .w1280 {
 
 
 
+/* --- dropdown searchbox --- */
+/* Datepicker */
+#ui-datepicker-div {
+	width: 80vw !important;
+	padding: 50px 15px;
+}
+
+
+
 /* main - trip Destination & activity */
 #activity .activity_card .card {
 	width: 49%;
@@ -40,7 +49,7 @@ footer .w1280 {
 
 /* main - gift cards*/
 #giftcard .giftcard_image {
-    background: url(../img/giftcard_full.webp)no-repeat top right / cover;
+    background: url(../img/giftcard_full.webp) no-repeat top right / cover;
 }
 #giftcard .giftcard_image.w100 {
 	width: 90%;

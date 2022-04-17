@@ -38,6 +38,27 @@ footer .w1280 {
 	width: 90vw;
 }
 
+/* header shrink */
+#header.shrink .search_box.shrink {
+	transform: translateX(-80%);
+}
+
+
+
+/* --- dropdown searchbox --- */
+/* Datepicker */
+#ui-datepicker-div {
+	top: 230px !important;
+	width: 90vw !important;
+	/* padding: 80px 0; */
+}
+#ui-datepicker-div .ui-datepicker-group {
+	width: 40%;
+	/* margin: 0 0 0 10px; */
+}
+/* #ui-datepicker-div .ui-datepicker-group-last {
+	margin-left: 50px;
+} */
 
 
 /* main */

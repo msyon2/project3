@@ -26,6 +26,7 @@
 	<!-- //favicon -->
 
 	<title>Airbnb</title>
+
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -33,6 +34,7 @@
 	<link rel="stylesheet" href="css/mobile.css" media="screen and (min-width:479px) and (max-width:768px)">
 	<link rel="stylesheet" href="css/tablet.css" media="screen and (min-width:769px) and (max-width:1023px)">
 	<link rel="stylesheet" href="css/laptop.css" media="screen and (min-width:1024px) and (max-width:1300px)">
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
 </head>
 
 <body>
@@ -51,7 +53,7 @@
 	<!-- header -->
 	<header>
 		<!-- #header -->
-		<div id="header">
+		<div id="header" class="pr">
 			<!-- w1280 -->
 			<div class="w1280">
 				<!-- top -->
@@ -62,7 +64,7 @@
 						<img src="./assets/logo.svg" alt="Airbnb Logo" />
 					</div>
 					<div class="nav flex">
-						<ul class="flex">
+						<ul class="menu flex">
 							<li class="pr"><a class="depth1 active" href="#tab_place">Places to stay</a></li>
 							<li class="pr"><a class="depth1" href="#tab_experience">Experiences</a></li>
 							<li class="pr"><a href="#">Online Experiences</a></li>
@@ -72,55 +74,130 @@
 							<div id="tab_place" class="search tab_place flex pa">
 								<div class="query pr">
 									<div class="place cell1">Location</div>
-									<input type="search" name="query" id="query_loc" placeholder="Where are you going?">
+									<input type="search" name="query" id="location" placeholder="Where are you going?">
 								</div>
 								<div class="query pr">
 									<div class="place cell2">Check in</div>
-									<input type="search" name="query" id="query_date_in" placeholder="Add dates">
+									<input type="search" name="query" id="check_in" placeholder="Add dates">
 								</div>
 								<div class="query pr">
 									<div class="place cell3">Check out</div>
-									<input type="search" name="query" id="query_date_out" placeholder="Add dates">
+									<input type="search" name="query" id="check_out" placeholder="Add dates">
 								</div>
 								<div class="query pr">
 									<div class="place cell4">Guests</div>
-									<input type="search" name="query" id="query_guest" placeholder="Add guests">
+									<input type="search" name="query" id="guest" placeholder="Add guests">
 								</div>
 							</div>
 							<!-- #tab_place -->
-							<div id="tab_place_content">
-								<div id="tab_place1"></div>
-								<div id="tab_place2"></div>
-								<div id="tab_place3"></div>
-								<div id="tab_place4"></div>
+							<div id="tab_place_content" class="flex pr">
+								<div class="depth2 location flex pa">
+									<p>Go anywhere, anytime</p>
+									<div class="flexible">
+										<a href="#" class="flex">
+											<span>I'm flexible</span>
+											<video src="assets/flexible.mp4" autoplay muted></video>
+										</a>
+									</div>
+								</div>
+								<div class="depth2"></div>
+								<div class="depth2"></div>
+								<div class="depth2 guest pa">
+									<ul>
+										<li class="flex">
+											<div class="age_category">
+												<span class="category">Adults</span>
+												<span>Ages 13 or above</span>
+											</div>
+											<div class="guest_num flex">
+												<button class="minus">-</button>
+												<span>0</span>
+												<button class="add">+</button>
+											</div>
+										</li>
+										<li>
+											<div class="age_category">
+												<span class="category">Children</span>
+												<span>Ages 2-12</span>
+											</div>
+											<div class="guest_num flex">
+												<button class="minus">-</button>
+												<span>0</span>
+												<button class="add">+</button>
+											</div>
+										</li>
+										<li>
+											<div class="age_category">
+												<span class="category">Infants</span>
+												<span>Under 2</span>
+											</div>
+											<div class="guest_num flex">
+												<button class="minus">-</button>
+												<span>0</span>
+												<button class="add">+</button>
+											</div>
+										</li>
+										<li>
+											<div class="age_category">
+												<span class="category">Pets</span>
+												<a href="#">Bringing a service animal?</a>
+											</div>
+											<div class="guest_num flex">
+												<button class="minus">-</button>
+												<span>0</span>
+												<button class="add">+</button>
+											</div>
+										</li>
+										<li><span>If you're lucky enought to have more than 2 pets with you, be sure to let
+												your host know.</span>
+										</li>
+									</ul>
+								</div>
 							</div>
 							<!-- //#tab_place_content -->
 							<div id="tab_experience" class="search pa flex">
 								<div class="query pr">
 									<div class="place cell1">Location</div>
-									<input type="search" name="query" id="query_place" placeholder="Where are you going?">
+									<input type="search" name="query" id="place"
+										placeholder="Where are you going?">
 								</div>
 								<div class="query pr">
 									<div class="place cell4">Date</div>
-									<input type="search" name="query" id="query_dates" placeholder="And when you want to go">
+									<input type="search" name="query" id="date"
+										placeholder="And when you want to go">
 								</div>
 							</div>
 							<!-- //#tab_experience -->
-							<div id="tab_experience_content" >
-								<div id="tab_experience1"></div>
-								<div id="tab_experience2"></div>
-								<div id="tab_experience3"></div>
-								<div id="tab_experience4"></div>
+							<div id="tab_experience_content" class="pr">
+								<div class="depth2 place">
+									<div class="flex">
+										<div id="map"></div>
+										<span>Nearby</span>
+									</div>
+								</div>
 							</div>
 							<!-- //#tab_experience_content-->
 							<button type="button" class="pa">
 								<object class="pa" data="./assets/search_thin.svg" type="image/svg+xml"></object>
 								검색 버튼
 							</button>
+							<!-- //.search_box -->
 						</div>
-						<!-- //.search_box -->
 					</div>
 					<!-- //.nav -->
+					<!-- //#header.shrink.search_box -->
+					<div class="search_box shrink pa">
+						<button type="button" class="pa">
+							<object class="pa" data="./assets/search_med.svg" type="image/svg+xml"></object>
+							검색 버튼
+						</button>
+						<div class="search">
+							<div class="query pa">
+								<div class="place cell1">Start your search</div>
+							</div>
+						</div>
+					</div>
+					<!-- //#header.shrink.search_box -->
 					<!-- .member login-->
 					<div class="member flex pr">
 						<div class="flex">
@@ -160,15 +237,15 @@
 						<a href="index.html"></a>
 						<object data="./assets/logo.svg" type="image/svg+xml"></object>
 					</div>
-					<div class="nav pr flex">
-						<div class="search_box">
-							<button type="button" class="pa">
-								<object class="pa" data="./assets/search_med.svg" type="image/svg+xml"></object>
+					<div class="nav pr">
+						<div class="search_box flex">
+							<button type="button" class="pr">
+								<object class="pa" data="./assets/explore.svg" type="image/svg+xml"></object>
 								검색 버튼
 							</button>
 							<div class="search">
 								<div class="query pr">
-									<div class="place cell1">Start your search</div>
+									<div class="place cell1">Where are you going?</div>
 								</div>
 							</div>
 						</div>
@@ -176,7 +253,7 @@
 					</div>
 					<!-- //.nav -->
 					<!-- member login-->
-					<div class="member flex">
+					<!-- <div class="member flex">
 						<div class="flex">
 							<div class="host"><a href="#">Become a Host</a></div>
 							<div class="lang pr">
@@ -188,19 +265,35 @@
 							<object data="./assets/member.svg" type="image/svg+xml"></object>
 							메인 메뉴
 						</button>
-					</div>
+					</div> -->
 					<!-- //.member login-->
 				</div>
 				<!-- //.top -->
 			</div>
 		</div>
 		<!-- //#header_scroll -->
+		<div id="sticky_nav" class="pf">
+			<div class="nav flex pr">
+				<a href="#" class="explore flex">
+						<img src="./assets/explore.svg" alt="explore icon">
+					<div>Explore</div>
+				</a>
+				<a href="#" class="wishlist flex">
+						<img src="./assets/wishlist.svg" alt="Wishlist icon">
+					<div>Wishlists</div>
+				</a>
+				<a href="#" class="login flex">
+					<img src="./assets/login.svg" alt="login icon">
+					<div>Log in</div>
+				</a>
+			</div>
+		</div>
 	</header>
 	<!-- //header -->
 	<main>
 		<!-- main -->
 		<section id="main_vis">
-			<!-- w1280--> 
+			<!-- w1280-->
 			<div class="w1280">
 				<div class="visual flex">
 					<h2 class="tit_w">Let your curiosity do the booking</h2>
@@ -815,6 +908,7 @@
 	<!-- //#footer -->
 	<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
 	<script src="js/detectmobilebrowser.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
 	<script src="js/jq.js"></script>
 </body>
 

@@ -43,6 +43,13 @@
 
 
 
+/* Sticky Nav bar for mobile */
+#sticky_nav {
+	display: block;
+}
+
+
+
 /* main */
 #main_vis {
 	padding-bottom: 48px;
@@ -132,8 +139,14 @@
 
 /* future dest */
 /* need to figure out tab condition */
+#future_dest .w1280 {
+	padding-bottom: 64px;
+}
 #future_dest .future_dest_list {
 	overflow: hidden;
+}
+#future_dest .future_dest_panel {
+	height: 300px;
 }
 #future_dest .future_dest_panel li {
 	width: 50%;
@@ -142,6 +155,9 @@
 
 
 /* footer */
+#footer {
+	position: relative;
+}
 #footer #info_list {
 	flex-wrap: wrap;
 	padding-bottom: 0;

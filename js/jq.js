@@ -9,10 +9,13 @@ loginLink.click(function (e) {
   loginMenu.toggle();
 });
 
-// top nav tab menu 
+// top nav tab menu
 let tabWrapper = $("#header .nav"),
   targetLink = tabWrapper.find("li a.depth1"),
-  tabContent = tabWrapper.find(".search_box>div.search");
+  tabContent = tabWrapper.find(".search_box>div.search"),
+  tabPlace = tabWrapper.find("li:first-child a.depth1"),
+  tabExp = tabWrapper.find("li:nth-child(2) a.depth1");
+  //console.log(tabPlace, tabExp)
 
 targetLink.each(function (i, e) {
   //console.log(i,e); //(index no, 값)
@@ -24,61 +27,151 @@ targetLink.each(function (i, e) {
     targetLink.removeClass("active");
     tg.addClass("active");
     tabContent.hide();
-    $("#" + tgt).show(); //다른 class와 연결하거나 해야할때 쓰는 방법
-    //$(tgAnc).show(); //위방법과 동일
+    $("#" + tgt).show();
   });
 });
 tabContent.eq(0).show();
-console.log(tabContent.eq(0));
+
+//hide search box dropdown when main nav tab changes
+tabPlace.on({
+  click: function (e) {
+    e.preventDefault();
+    searchExpContent.hide();
+  },
+});
+tabExp.on({
+  click: function (e) {
+    e.preventDefault();
+    searchPlaceContent.hide();
+  },
+});
+
+
+
+/* -- search box tab dropdown option -- */
+let searchBoxWrapper = $(".search_box"),
+  searchPlaceTab = searchBoxWrapper.find("#tab_place .query"),
+  searchPlaceContent = searchBoxWrapper.find("#tab_place_content > .depth2"),
+  searchExpTab = searchBoxWrapper.find("#tab_experience .query"),
+  searchExpContent = searchBoxWrapper.find("#tab_experience_content > .depth2");
+
+// Places to stay sub tab toggle on&off
+placeTabToggle = $.each(searchPlaceTab, function (i) {
+  let tg = $(this);
+  tg.on({
+    click: function (e) {
+      e.preventDefault();
+
+      searchExpContent.hide();
+      searchPlaceContent.eq(i).siblings().hide();
+      searchPlaceContent.eq(i).toggle("fade", 500);
+    },
+  });
+});
+
+// Experiences sub tab toggle on&off
+ExpTabToggle = $.each(searchExpTab, function (i) {
+  let tg = $(this);
+  tg.on({
+    click: function (e) {
+      e.preventDefault();
+
+      searchPlaceContent.hide();
+      searchExpContent.eq(i).siblings().hide();
+      searchExpContent.eq(i).toggle("fade", 500);
+    },
+  });
+});
 
 
 
 
-// search box tab dropdown option
+// search box datepicker
+$(function () {
+  $("#date").datepicker({
+    numberOfMonths: 2,
+    showButtonPanel: true,
+    defaultDate: +4,
+    gotoCurrent: true,
+    minDate: -0,
+    maxDate: "+2M +10D",
+  });
+});
+$(function () {
+  var dateFormat = "mm/dd/yy",
+    from = $("#check_in")
+      .datepicker({
+        defaultDate: "+1w",
+        changeMonth: false,
+        numberOfMonths: 2,
+        minDate: -0,
+      })
+      .on("change", function () {
+        to.datepicker("option", "minDate", getDate(this));
+      }),
+    to = $("#check_out")
+      .datepicker({
+        defaultDate: "+1w",
+        changeMonth: false,
+        numberOfMonths: 2,
+      })
+      .on("change", function () {
+        from.datepicker("option", "maxDate", getDate(this));
+      });
 
+  function getDate(element) {
+    var date;
+    try {
+      date = $.datepicker.parseDate(dateFormat, element.value);
+    } catch (error) {
+      date = null;
+    }
+
+    return date;
+  }
+});
 
 
 
 
 //Shrink Header on scrollTop
-var $mainHeader=$('#header'),
-	$window=$(window),
-	$Logo=$('.logo img'),
-	$colorLogo='./assets/logo_clr.svg',
-	$defaultLogo='./assets/logo.svg'
-  $iconLang=$('.member .lang img')
-  $iconLangDark='./assets/globe_footer.svg'
-  $defaultIconLang='./assets/globe.svg'
-	$divide=$mainHeader.outerHeight();
-	//outerHeight() 높이(패딩/보더포함)
+var $mainHeader = $("#header"),
+  $window = $(window),
+  $Logo = $(".logo img"),
+  $colorLogo = "./assets/logo_clr.svg",
+  $defaultLogo = "./assets/logo.svg";
+$iconLang = $(".member .lang img");
+$iconLangDark = "./assets/globe_footer.svg";
+$defaultIconLang = "./assets/globe.svg";
+$divide = $mainHeader.outerHeight();
+//outerHeight() 높이(패딩/보더포함)
 $window.scroll(function () {
-	if($window.scrollTop()>$divide){
-		if(!$mainHeader.hasClass('shrink')){
-			switchLogo($colorLogo);
-			$mainHeader.addClass('shrink');
+  if ($window.scrollTop() > $divide) {
+    if (!$mainHeader.hasClass("shrink")) {
+      switchLogo($colorLogo);
+      $mainHeader.addClass("shrink");
       switchLang($iconLangDark);
-		}
-	}else{
-		if($mainHeader.hasClass('shrink')){
-			switchLogo($defaultLogo);
-			$mainHeader.removeClass('shrink');
+    }
+  } else {
+    if ($mainHeader.hasClass("shrink")) {
+      switchLogo($defaultLogo);
+      $mainHeader.removeClass("shrink");
       switchLang($defaultIconLang);
-		}
-	}
+    }
+  }
 });
-//img 주소를 바꾸는 switchImg 함수
-function switchLogo(newLogoPath){
-	$Logo.hide();
-	$Logo.attr('src',newLogoPath);
-	$Logo.show();
+//img path 바꾸는 switchImg 함수
+function switchLogo(newLogoPath) {
+  $Logo.hide();
+  $Logo.attr("src", newLogoPath);
+  $Logo.show();
 }
-function switchLang(newLangPath){
-	$iconLang.hide();
-	$iconLang.attr('src',newLangPath);
-	$iconLang.show();
+function switchLang(newLangPath) {
+  $iconLang.hide();
+  $iconLang.attr("src", newLangPath);
+  $iconLang.show();
 }
 //scroll header search bar 위치 이동 함수
-
 
 
 
@@ -97,36 +190,30 @@ tabList.each(function (i, e) {
     tabList.removeClass("active");
     tab.addClass("active");
     tabPanel.hide();
-    $("#"+panel).show(); 
+    $("#" + panel).show();
   });
 });
 tabPanel.eq(0).show();
 
+/* --- @mediaquery mobile & mobile_s styling --- */
 
-
-
-
-
-
-
-
-
-
-
-
-/* @mediaquery mobile & mobile_s styling */
-
-// scroll header 
-const scrollHeader=$('#header_scroll');
+// scroll header & skicky nav bar
+  const scrollHeader = $("#header_scroll");
+  const stickyNav = $("#sticky_nav")
 $(window).scroll(function () {
-	if($(window).scrollTop()>100){
-		scrollHeader.css('background','#fff')
-		scrollHeader.find('.search_box .search').css('background','#eee')
-	}else{
-		scrollHeader.css('background','transparent')
-		scrollHeader.find('.search_box .search').css('background','#f7f7f7')
-	}
-})
+  if ($(window).scrollTop() > 100) {
+    scrollHeader.css("background", "#fff");
+    scrollHeader.find(".search_box .search").css("background", "#f7f7f7");
+  } else {
+    scrollHeader.css("background", "transparent");
+    scrollHeader.find(".search_box .search").css("background", "#fff");
+  }
+  if ($(window).scrollTop() > 700) {
+    stickyNav.hide();
+  }else {
+    stickyNav.show();
+  }
+});
 
 // gift card img show/hide
 if (jQuery.browser.mobile == true) {
