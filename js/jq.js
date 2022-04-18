@@ -15,7 +15,7 @@ let tabWrapper = $("#header .nav"),
   tabContent = tabWrapper.find(".search_box>div.search"),
   tabPlace = tabWrapper.find("li:first-child a.depth1"),
   tabExp = tabWrapper.find("li:nth-child(2) a.depth1");
-  //console.log(tabPlace, tabExp)
+//console.log(tabPlace, tabExp)
 
 targetLink.each(function (i, e) {
   //console.log(i,e); //(index no, 값)
@@ -45,6 +45,7 @@ tabExp.on({
     searchPlaceContent.hide();
   },
 });
+
 
 
 
@@ -82,9 +83,6 @@ ExpTabToggle = $.each(searchExpTab, function (i) {
     },
   });
 });
-
-
-
 
 // search box datepicker
 $(function () {
@@ -131,17 +129,14 @@ $(function () {
   }
 });
 
-
-
-
 //Shrink Header on scrollTop
 var $mainHeader = $("#header"),
   $window = $(window),
   $Logo = $(".logo img"),
   $colorLogo = "./assets/logo_clr.svg",
-  $defaultLogo = "./assets/logo.svg";
-$iconLang = $(".member .lang img");
-$iconLangDark = "./assets/globe_footer.svg";
+  $defaultLogo = "./assets/logo.svg",
+$iconLang = $(".member .lang img"),
+$iconLangDark = "./assets/globe_footer.svg",
 $defaultIconLang = "./assets/globe.svg";
 $divide = $mainHeader.outerHeight();
 //outerHeight() 높이(패딩/보더포함)
@@ -171,8 +166,6 @@ function switchLang(newLangPath) {
   $iconLang.attr("src", newLangPath);
   $iconLang.show();
 }
-//scroll header search bar 위치 이동 함수
-
 
 
 // future destination section tab
@@ -195,31 +188,56 @@ tabList.each(function (i, e) {
 });
 tabPanel.eq(0).show();
 
+
+
 /* --- @mediaquery mobile & mobile_s styling --- */
 
 // scroll header & skicky nav bar
-  const scrollHeader = $("#header_scroll");
-  const stickyNav = $("#sticky_nav")
-$(window).scroll(function () {
-  if ($(window).scrollTop() > 100) {
-    scrollHeader.css("background", "#fff");
-    scrollHeader.find(".search_box .search").css("background", "#f7f7f7");
-  } else {
-    scrollHeader.css("background", "transparent");
-    scrollHeader.find(".search_box .search").css("background", "#fff");
-  }
-  if ($(window).scrollTop() > 700) {
-    stickyNav.hide();
-  }else {
-    stickyNav.show();
-  }
+const scrollHeader = $("#header_scroll")
+const stickyNav = $("#sticky_nav")
+const screenW = $(window).outerWidth()
+
+$(window).on({
+	scroll: function () {
+		if ($(window).scrollTop() > 100) {
+			scrollHeader.css("background", "#fff")
+			scrollHeader.find(".search_box .search").css("background", "#f7f7f7")
+		} else {
+			scrollHeader.css("background", "transparent")
+			scrollHeader.find(".search_box .search").css("background", "#fff")
+		}
+		if ($(window).scrollTop() > 900) {
+			stickyNav.hide();
+      
+		} 
+	},
+	resize: function () {
+		var newWidth = $(window).outerWidth();
+		console.log(newWidth)
+		if (newWidth > 768) {
+			stickyNav.hide();
+      
+		} else if (newWidth < 767) {
+			console.log(screenW)
+			stickyNav.show();
+		} 
+	},
 });
+
+
 
 // gift card img show/hide
 if (jQuery.browser.mobile == true) {
   $("div.giftcard_image").hide();
   $("div.giftcard_image.w100").show();
+  stickyNav.show();
 } else {
   $("div.giftcard_image").show();
   $("div.giftcard_image.w100").hide();
+  //stickyNav.hide();
 }
+
+//need to resolve the below
+/* if (jQuery.browser.mobile == false){
+  stickyNav.hide();
+} */
