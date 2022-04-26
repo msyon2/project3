@@ -18,8 +18,8 @@ let tabWrapper = $("#header .nav"),
 //console.log(tabPlace, tabExp)
 
 targetLink.each(function (i, e) {
-  //console.log(i,e); //(index no, 값)
-  let tg = $(this); //this = 순환하고 있는 요소중 현재 번째
+  //console.log(i,e); //
+  let tg = $(this); //this = current element
   let tgAnc = tg.attr("href");
   let tgt = tgAnc.substr(1);
   tg.click(function (e) {
@@ -56,7 +56,7 @@ let searchBoxWrapper = $(".search_box"),
   searchExpTab = searchBoxWrapper.find("#tab_experience .query"),
   searchExpContent = searchBoxWrapper.find("#tab_experience_content > .depth2");
 
-// Places to stay sub tab toggle on&off
+// Toggle on&off for "Places to stay" sub tab 
 placeTabToggle = $.each(searchPlaceTab, function (i) {
   let tg = $(this);
   tg.on({
@@ -70,7 +70,7 @@ placeTabToggle = $.each(searchPlaceTab, function (i) {
   });
 });
 
-// Experiences sub tab toggle on&off
+// Toggle on&off "Experiences" sub tab 
 ExpTabToggle = $.each(searchExpTab, function (i) {
   let tg = $(this);
   tg.on({
@@ -139,7 +139,6 @@ $iconLang = $(".member .lang img"),
 $iconLangDark = "./assets/globe_footer.svg",
 $defaultIconLang = "./assets/globe.svg";
 $divide = $mainHeader.outerHeight();
-//outerHeight() 높이(패딩/보더포함)
 $window.scroll(function () {
   if ($window.scrollTop() > $divide) {
     if (!$mainHeader.hasClass("shrink")) {
@@ -155,7 +154,7 @@ $window.scroll(function () {
     }
   }
 });
-//img path 바꾸는 switchImg 함수
+//switch logo img function
 function switchLogo(newLogoPath) {
   $Logo.hide();
   $Logo.attr("src", newLogoPath);
@@ -174,8 +173,7 @@ let futurDestWrapper = $("#future_dest"),
   tabPanel = futurDestWrapper.find(".future_dest_panel>div");
 
 tabList.each(function (i, e) {
-  //console.log(i,e); //(index no, 값)
-  let tab = $(this); //this = 순환하고 있는 요소중 현재 번째
+  let tab = $(this); 
   let link = tab.attr("href");
   let panel = link.substr(1);
   tab.click(function (e) {
@@ -206,10 +204,13 @@ $(window).on({
 			scrollHeader.css("background", "transparent")
 			scrollHeader.find(".search_box .search").css("background", "#fff")
 		}
-		if ($(window).scrollTop() > 900) {
-			stickyNav.hide();
-      
-		} 
+    if (
+      $(window).scrollTop() + window.innerHeight >
+      $(document).height() - 1500
+    ) {
+      stickyNav.hide();
+    }
+		
 	},
 	resize: function () {
 		var newWidth = $(window).outerWidth();
@@ -224,8 +225,6 @@ $(window).on({
 	},
 });
 
-
-
 // gift card img show/hide
 if (jQuery.browser.mobile == true) {
   $("div.giftcard_image").hide();
@@ -234,10 +233,6 @@ if (jQuery.browser.mobile == true) {
 } else {
   $("div.giftcard_image").show();
   $("div.giftcard_image.w100").hide();
-  //stickyNav.hide();
 }
 
-//need to resolve the below
-/* if (jQuery.browser.mobile == false){
-  stickyNav.hide();
-} */
+

@@ -50,15 +50,10 @@ footer .w1280 {
 #ui-datepicker-div {
 	top: 230px !important;
 	width: 90vw !important;
-	/* padding: 80px 0; */
 }
 #ui-datepicker-div .ui-datepicker-group {
 	width: 40%;
-	/* margin: 0 0 0 10px; */
 }
-/* #ui-datepicker-div .ui-datepicker-group-last {
-	margin-left: 50px;
-} */
 
 
 /* main */
@@ -106,7 +101,6 @@ footer .w1280 {
 }
 
 /* future dest */
-/* need to figure out tab condition */
 #future_dest .future_dest_list {
 	overflow: hidden;
 }
@@ -153,4 +147,9 @@ footer .w1280 {
 }
 #copyright .foot_left>span:first-of-type {
 	display: none;
+}
+/*  W3C validator marks */
+#copyright .w3c_valid {
+	flex-direction: row;
+	justify-content: center;
 }

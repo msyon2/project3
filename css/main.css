@@ -153,10 +153,10 @@ main button:active {
 	align-items: flex-start;
 }
 #activity .activity_card .card.outdoor {
-	background: url(../img/activity_explore.webp)no-repeat center center / cover;
+	background: url(../img/activity_explore.webp) no-repeat center center / cover;
 }
 #activity .activity_card .card.indoor {
-	background: url(../img/activity_indoor.webp)no-repeat center center / cover;
+	background: url(../img/activity_indoor.webp) no-repeat center center / cover;
 }
 #activity .activity_card .card h3 {
 	font-size: 41px;
@@ -181,7 +181,7 @@ main button:active {
 #giftcard .giftcard_image {
 	width: 75%;
 	height: 446px;
-	background: url(../img/giftcard_full.webp)no-repeat top left / cover;
+	background: url(../img/giftcard_full.webp) no-repeat top left / cover;
 	margin-bottom: 96px;
 }
 #giftcard .giftcard_image.w100 {

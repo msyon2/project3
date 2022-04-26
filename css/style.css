@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url(./font.css);
-/* html최상위 요소 선택자:root(root:최상위경로) */
+
 :root {
 	--primary-clr:#FF385C;
 	--secondary-clr:#222222;
@@ -22,7 +22,6 @@ body {
     font-family: 'Cereal', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
     font-size: 14px;
     line-height: 1.43;
-    /* color: #484848; */
     color: var(--secondary-clr);
     background-color: var(--white);
     margin: 0;
@@ -48,9 +47,7 @@ a {
 .w1280 {
 	width: 100%;
 	max-width: 1280px;
-	/* max-width: 1120px; */
 	margin: auto;
-	/* background: #bcbcbc; */
 }
 .flex {
 	display: flex;
@@ -143,7 +140,6 @@ a {
 	background: var(--secondary-clr);
 }
 .member .host a {
-	/* width: 77px; */
 	display: block;
 	height: 42px;
 	line-height: 42px;
@@ -154,7 +150,6 @@ a {
 	width: 46px;
 	height: 42px;
 	border-radius: 21px;
-	/* background: var(--black); */
 }
 .member .lang img {
 	top: 50%;
@@ -274,7 +269,6 @@ a {
 	width: 850px;
 	height: 65px;
 	border-radius: 32px;
-	/* background-color: #BD1E59; */
 	top: 40px;
 }
 .nav .search_box .search {
@@ -588,7 +582,6 @@ a {
 	margin-bottom: 15px;
 	padding-top: 22px;
 	width: 100%;
-	/* padding-bottom: 37px; */
 }
 #ui-datepicker-div .ui-datepicker-calendar td a {
 	text-align: center;
@@ -806,7 +799,6 @@ a {
 	padding: 0 3px;
 	stroke: var(--gray4);
 	color: #eee;
-	color:var()
 }
 
 
@@ -900,4 +892,14 @@ a {
 }
 #copyright .foot_right .sns_icons .sns:nth-child(3) object{
 	margin-right: 0;
+}
+/*  W3C validator marks */
+#copyright .w3c_valid {
+	width: 100%;
+	justify-content: flex-start;
+	padding-top: 1rem;
+}
+#copyright .w3c_valid a {
+	display: inline-block;
+	margin-right: 10px;
 }
